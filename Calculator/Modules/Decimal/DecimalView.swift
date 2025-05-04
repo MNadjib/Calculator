@@ -11,9 +11,10 @@ struct DecimalView: View {
     @StateObject var decimalViewModel:DecimalViewModel
     
     var body: some View {
-        CalculatorView(result: $decimalViewModel.result, expression: $decimalViewModel.expresion, keyboardType: .decimal, title: "Décimal", onkeyPress: decimalViewModel.handleKeyPress(_:))
+        CalculatorView(result: $decimalViewModel.result, expression: $decimalViewModel.expresion, error: $decimalViewModel.error, keyboardType: .decimal, title: "Décimal", onkeyPress: decimalViewModel.handleKeyPress(_:))
     }
 }
+
 #if DEBUG
 #Preview {
     DecimalView(decimalViewModel: DecimalViewModel())

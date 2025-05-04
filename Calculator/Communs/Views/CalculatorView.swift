@@ -28,10 +28,8 @@ struct CalculatorView: View {
                 .padding()
             }
             .navigationTitle(title)
-            .alert(error?.localizedDescription, isPresented: error != nil) {
-                <#code#>
-            } message: {
-                
+            .alert(item: $error) { error in
+                Alert(title: Text( error.title), message: Text(error.description), dismissButton: .default(Text("OK")))
             }
 
         }

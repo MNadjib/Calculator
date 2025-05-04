@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum CalculatorError: Error {
+enum CalculatorError: Error, Identifiable {
+    var id: Self {self}
+    
     case invalidExpression
     case invalidKey
     case divisionByZero
