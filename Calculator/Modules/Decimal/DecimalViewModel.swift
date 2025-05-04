@@ -27,7 +27,6 @@ class DecimalViewModel: ObservableObject {
             } else {
                 expresion.append(" \(key) ")
             }
-        case
         default:
             expresion.append(key)
         }
