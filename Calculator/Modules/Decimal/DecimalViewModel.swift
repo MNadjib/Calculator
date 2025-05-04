@@ -22,7 +22,7 @@ class DecimalViewModel: ObservableObject {
         case "DEL":
             expresion.removeLast()
         case let k where ["/", "*", "-", "+"].contains(k) :
-            if expresion.isEmpty || ["/", "*", "-", "+"].contains(expresion.last) {
+            if expresion.isEmpty || ["/", "*", "-", "+"].contains(expresion.trimmingCharacters(in: .whitespacesAndNewlines).last) {
                 error = .invalidKey
             } else {
                 expresion.append(" \(key) ")
